@@ -1,0 +1,15 @@
+baseURL = "http://ieeeucr.org/"
+languageCode = "en-us"
+title = "IEEE Projects"
+enableGitInfo = true
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+    posts = "post"
+    student = "students"
+    bounty = "bounties"
+    post = "posts"
+[params]
+    description = "IEEE - UCR Official Site!"
+    primaryColor = "#F44336"
+    secondaryColor = "#2196F3"

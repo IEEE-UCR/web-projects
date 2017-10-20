@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="{{ if .IsHome }}{{ $.Site.Params.Description }}{{ else }}{{ .Description }}{{end}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }} | {{ .Title }}</title>
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> -->
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> -->
+
+    <!-- Web Application Manifest -->
+    <!-- <link rel="manifest" href="manifest.json"> -->
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <!-- <meta name="mobile-web-app-capable" content="yes"> -->
+    <!-- <meta name="application-name" content="{{ .Site.Title }}"> -->
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> -->
+    <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="{{ .Site.Params.PrimaryColor }}"> -->
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+    <!-- <meta name="apple-mobile-web-app-title" content="IoT Workshops"> -->
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <!-- <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png"> -->
+    <meta name="msapplication-TileColor" content="{{ .Site.Params.PrimaryColor }}">
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="{{ .Site.Params.PrimaryColor }}">
+
+    <!-- Material Design icons -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+
+
+    <!-- Material Design Lite page styles -->
+    <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-blue.min.css"> -->
+
+    <!-- Custom styles -->
+    <!-- <link rel="stylesheet" href="styles/main.css"> -->
+  {{ .Hugo.Generator }}
+</head>
+<body>
+  <p>Baseof Header</p>
+  <main>
+  {{ block "main" . }}
+
+  {{ end }}
+  </main>
+  <p>Baseof Footer</p>
+</body>
+</html>
+

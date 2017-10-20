@@ -1,0 +1,14 @@
+This is a student page for {{ .Title }}.
+<ul>
+  <li>email: {{ .Params.email }}</li>
+  <li>major: {{ .Params.major }}</li>
+  <li>linkedin: {{ .Params.linkedin }}</li>
+  <li>website: {{ .Params.website }}</li>
+  <li>orgs: {{ range .Params.orgs }}{{ . }} {{ end }}</li>
+</ul>
+Projects:
+<ul>
+    {{ range index .Site.Taxonomies.students .Data.Term  }}
+        <li><a href="{{ .Page.RelPermalink  }}">{{ .Page.Title  }}</a></li>
+    {{ end  }}
+</ul>
