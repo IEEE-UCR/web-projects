@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bounties on UCR Projects</title>
+    <link>https://ieee-ucr.github.io/web-projects/bounties/</link>
+    <description>Recent content in Bounties on UCR Projects</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Oct 2017 14:42:15 -0700</lastBuildDate>
+    
+	<atom:link href="https://ieee-ucr.github.io/web-projects/bounties/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android</title>
+      <link>https://ieee-ucr.github.io/web-projects/bounties/android/</link>
+      <pubDate>Wed, 18 Oct 2017 14:42:15 -0700</pubDate>
+      
+      <guid>https://ieee-ucr.github.io/web-projects/bounties/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ios</title>
+      <link>https://ieee-ucr.github.io/web-projects/bounties/ios/</link>
+      <pubDate>Wed, 18 Oct 2017 14:42:15 -0700</pubDate>
+      
+      <guid>https://ieee-ucr.github.io/web-projects/bounties/ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mobile</title>
+      <link>https://ieee-ucr.github.io/web-projects/bounties/mobile/</link>
+      <pubDate>Wed, 18 Oct 2017 14:42:15 -0700</pubDate>
+      
+      <guid>https://ieee-ucr.github.io/web-projects/bounties/mobile/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

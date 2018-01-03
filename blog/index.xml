@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on UCR Projects</title>
+    <link>https://ieee-ucr.github.io/web-projects/blog/</link>
+    <description>Recent content in Blogs on UCR Projects</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Oct 2017 14:44:47 -0700</lastBuildDate>
+    
+	<atom:link href="https://ieee-ucr.github.io/web-projects/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2017-10-18</title>
+      <link>https://ieee-ucr.github.io/web-projects/blog/2017/10/20/</link>
+      <pubDate>Wed, 18 Oct 2017 14:44:47 -0700</pubDate>
+      
+      <guid>https://ieee-ucr.github.io/web-projects/blog/2017/10/20/</guid>
+      <description>This is a member spotlight post!
+Lorem ipsum dolor amet mlkshk vinyl knausgaard, blog woke schlitz shoreditch swag artisan palo santo. Jianbing next level readymade hammock sriracha. Beard gluten-free YOLO, hashtag master cleanse glossier chia trust fund. Authentic raclette poke fam offal. Truffaut plaid +1 keytar jianbing gastropub leggings DIY synth. Schlitz 8-bit man bun craft beer tumeric. Craft beer shabby chic whatever, trust fund kale chips truffaut single-origin coffee.</description>
+    </item>
+    
+    <item>
+      <title>2017-10-18</title>
+      <link>https://ieee-ucr.github.io/web-projects/blog/2017/10/18/</link>
+      <pubDate>Wed, 18 Oct 2017 14:33:45 -0700</pubDate>
+      
+      <guid>https://ieee-ucr.github.io/web-projects/blog/2017/10/18/</guid>
+      <description>This is a generic blog post!
+Lorem ipsum dolor amet palo santo pork belly trust fund, quinoa aesthetic post-ironic slow-carb flexitarian asymmetrical heirloom live-edge. Deep v butcher banjo post-ironic. Narwhal shabby chic jean shorts, fam shoreditch ennui iPhone cloud bread chicharrones retro lomo helvetica austin. Drinking vinegar gluten-free salvia actually butcher.</description>
+    </item>
+    
+  </channel>
+</rss>

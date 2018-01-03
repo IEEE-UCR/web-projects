@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberry Pi on UCR Projects</title>
+    <link>https://ieee-ucr.github.io/web-projects/tags/raspberry-pi/</link>
+    <description>Recent content in Raspberry Pi on UCR Projects</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Oct 2017 18:01:06 -0700</lastBuildDate>
+    
+	<atom:link href="https://ieee-ucr.github.io/web-projects/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Growbot</title>
+      <link>https://ieee-ucr.github.io/web-projects/projects/growbot/</link>
+      <pubDate>Tue, 17 Oct 2017 18:01:06 -0700</pubDate>
+      
+      <guid>https://ieee-ucr.github.io/web-projects/projects/growbot/</guid>
+      <description>Level 1 heading Butcher copper mug wolf four dollar toast, neutra 8-bit whatever adaptogen gluten-free hexagon lumbersexual. Schlitz williamsburg banh mi, four dollar toast meditation activated charcoal street art pickled direct trade tousled paleo artisan. Four loko food truck vape PBR&amp;amp;B, marfa pitchfork lumbersexual keffiyeh tattooed selfies. Banh mi shaman taiyaki lomo next level cloud bread hashtag plaid enamel pin authentic messenger bag kombucha brunch. Kale chips authentic kickstarter, small batch squid master cleanse cardigan lyft lomo fashion axe typewriter iceland narwhal franzen paleo.</description>
+    </item>
+    
+  </channel>
+</rss>
