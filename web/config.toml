@@ -1,15 +1,15 @@
-baseURL = "http://ieeeucr.org/"
+baseURL = "http://projects.ieeeucr.org/"
 languageCode = "en-us"
-title = "IEEE Projects"
+title = "UCR Projects"
 enableGitInfo = true
 [taxonomies]
     tag = "tags"
     category = "categories"
-    posts = "post"
     student = "students"
     bounty = "bounties"
     post = "posts"
+    course = "courses"
 [params]
-    description = "IEEE - UCR Official Site!"
+    description = "UCR Student Projects, hosted by IEEE-UCR."
     primaryColor = "#F44336"
     secondaryColor = "#2196F3"

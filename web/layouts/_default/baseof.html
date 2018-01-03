@@ -42,17 +42,40 @@
     <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-blue.min.css"> -->
 
     <!-- Custom styles -->
-    <!-- <link rel="stylesheet" href="styles/main.css"> -->
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro" rel="stylesheet">
   {{ .Hugo.Generator }}
 </head>
 <body>
-  <p>Baseof Header</p>
+  <header>
+    <a href="{{ .Site.BaseURL }}">
+      <div class="title">{{ .Site.Title }}</div>
+    </a>
+    <div class="nav">
+      <ul>
+        <a href="/blog"><li>blog</li></a>
+        <a href="/solo-projects"><li>independent</li></a>
+        <a href="/club-projects"><li>club</li></a>
+        <a href="/students"><li>by student</li></a>
+        <a href="/courses"><li>by class</li></a>
+        <a href="/classifieds"><li>classifieds</li></a>
+        <a href="/submissions"><li>submit your project</li></a>
+      </ul>
+    </div>
+  </header>
   <main>
   {{ block "main" . }}
-
   {{ end }}
   </main>
-  <p>Baseof Footer</p>
+  <footer>
+    <div>UCR Projects Team 2018.</div>
+    <div class="nav">
+      <ul>
+        <a href="#"><li>contact us</li></a>
+        <a href="/about"><li>about us</li></a>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
 

@@ -1,3 +1,6 @@
 {{ define "main" }}
   Home page
+  {{ range first 10 (where (where .Data.Pages "Type" "!=" "classifieds") ".Params.categories" "!=" nil) }}
+    {{ .Render "summary" }}
+  {{ end }}
 {{ end }}

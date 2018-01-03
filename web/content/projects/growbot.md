@@ -2,12 +2,12 @@
 title: "Growbot"
 date: 2017-10-17T18:01:06-07:00
 students: ["jgome043"]
-categories: ["student-project"]
+categories: ["student-project", "course-project"]
 tags: ["raspberry pi", "opencv"]
+courses: "cs122a"
 draft: true
 ---
-## Joel Gomez
-
+# Level 1 heading
 Butcher copper mug wolf four dollar toast, neutra 8-bit whatever adaptogen
 gluten-free hexagon lumbersexual. Schlitz williamsburg banh mi, four dollar
 toast meditation activated charcoal street art pickled direct trade tousled
@@ -22,6 +22,7 @@ tumblr palo santo. Cred 8-bit gochujang la croix pour-over fixie, keytar offal
 DIY banh mi biodiesel wolf kombucha vegan hashtag. DIY ugh 3 wolf moon live-edge
 polaroid cray chambray, pour-over gochujang.
 
+## Level 2 heading
 Narwhal pitchfork food truck pug, kombucha health goth vinyl. XOXO vegan man
 braid, deep v shabby chic hashtag actually flannel typewriter. Chambray shabby
 chic art party etsy. Bicycle rights letterpress aesthetic polaroid coloring book
@@ -34,6 +35,7 @@ bulb iPhone artisan pop-up. Flexitarian slow-carb celiac air plant keffiyeh. Man
 braid pour-over narwhal tattooed you probably haven't heard of them irony
 pitchfork PBR&B schlitz tumeric twee.
 
+### Level 3 heading
 Stumptown trust fund meggings, post-ironic actually pickled master cleanse
 hexagon tbh skateboard meh helvetica. Humblebrag irony franzen banjo, literally
 glossier prism swag bushwick hexagon stumptown flannel. Ethical offal

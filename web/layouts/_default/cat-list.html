@@ -1,16 +1,15 @@
 {{ define "main" }}
-  list layout
-<h1>{{ if eq .Type "blog" }}Blog{{ else }}{{ .Title }}{{ end }}</h1>
-  {{ range .Pages }}
+  cat layout
+<h1>{{ .Title }}</h1>
+{{ $pagecat := .Params.pagecat  }}
+{{ range $key, $taxonomy := .Site.Taxonomies.categories  }}
+  {{ if eq $key $pagecat  }}
+    {{ range $taxonomy.Pages  }}
 <a class="listing" href="{{ .Permalink }}">
   <article class="summary">
     <header>
       <h2>
-      {{- if eq .Type "blog" -}}
-        {{ .Date.Format "Mon, Jan 2, 2006" }}
-      {{- else -}}
-        {{ .Title }}
-      {{- end -}}
+      {{ .Title }}
       </h2>
       {{ if (.Param "students") }}
       <div class="post-contributors">
@@ -34,5 +33,7 @@
     <p>{{ .Summary }}</p>
   </article>
 </a>
-{{ end }}
+    {{ end  }}
+  {{ end  }}
+{{ end  }}
 {{ end }}

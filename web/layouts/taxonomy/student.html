@@ -1,3 +1,4 @@
+{{ define "main" }}
 This is a student page for {{ .Title }}.
 <ul>
   <li>email: {{ .Params.email }}</li>
@@ -12,3 +13,4 @@ Projects:
         <li><a href="{{ .Page.RelPermalink  }}">{{ .Page.Title  }}</a></li>
     {{ end  }}
 </ul>
+{{ end }}

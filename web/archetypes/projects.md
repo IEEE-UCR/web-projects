@@ -5,6 +5,7 @@ students: []
 # student-project, org-project, course-project
 categories: ["student-project"]
 tags: []
+courses: ""
 draft: true
 ---
 

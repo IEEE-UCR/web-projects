@@ -1,5 +1,39 @@
 {{ define "main" }}
   Single page layout
-  <h1>{{ .Title }}</h1>
-  <p>{{ .Content }}</p>
+  <h1>
+    {{- if eq .Type "blog" -}}
+      {{ .Date.Format "Mon, Jan 2, 2006" }}
+    {{- else -}}
+      {{ .Title }}
+    {{- end -}}
+  </h1>
+  {{ if (.Param "students") }}
+    <div>By:</div>
+    <ul class="ul-contributors">
+      {{ range $student := (.Param "students") }}
+      {{ range (where $.Site.Pages "Data.Term" $student) }}
+      <li><a href="{{ .URL }}">
+          {{- if .Params.title -}}
+            {{- .Title -}}
+          {{- else -}}
+            {{- $student -}}
+          {{- end -}}
+      </a></li>
+      {{ end }}
+      {{ end }}
+    </ul>
+  {{ end }}
+  {{ if (.Param "tags") }}
+  <div class="tags">
+      Tags:
+    <div>
+      {{ range .Param "tags" }}
+      <a class="tag" href="{{ $.Site.BaseURL }}tags/{{ urlize . }}">
+          {{- . -}}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+  <div class="post-content">{{ .Content }}</div>
 {{ end }}

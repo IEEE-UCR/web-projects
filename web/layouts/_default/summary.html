@@ -1,15 +1,12 @@
-{{ define "main" }}
-  list layout
-<h1>{{ if eq .Type "blog" }}Blog{{ else }}{{ .Title }}{{ end }}</h1>
-  {{ range .Pages }}
+{{ if or (eq .Type "blog") (eq .Type "projects") }}
 <a class="listing" href="{{ .Permalink }}">
   <article class="summary">
     <header>
       <h2>
       {{- if eq .Type "blog" -}}
-        {{ .Date.Format "Mon, Jan 2, 2006" }}
+        {{ humanize .Type }} - {{ .Date.Format "Mon, Jan 2, 2006" }}
       {{- else -}}
-        {{ .Title }}
+        {{ humanize .Type | singularize }} - {{ .Title }}
       {{- end -}}
       </h2>
       {{ if (.Param "students") }}
@@ -34,5 +31,4 @@
     <p>{{ .Summary }}</p>
   </article>
 </a>
-{{ end }}
 {{ end }}
