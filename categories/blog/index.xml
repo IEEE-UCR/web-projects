@@ -6,10 +6,28 @@
     <description>Recent content in Blog on UCR Projects</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Oct 2017 14:44:47 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jan 2018 17:42:31 -0800</lastBuildDate>
     
 	<atom:link href="https://ieee-ucr.github.io/web-projects/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2018-01-03</title>
+      <link>https://ieee-ucr.github.io/web-projects/blog/2018/01/04/</link>
+      <pubDate>Wed, 03 Jan 2018 17:42:31 -0800</pubDate>
+      
+      <guid>https://ieee-ucr.github.io/web-projects/blog/2018/01/04/</guid>
+      <description>This is a sticky post that ends 01/03/2018</description>
+    </item>
+    
+    <item>
+      <title>2018-01-03</title>
+      <link>https://ieee-ucr.github.io/web-projects/blog/2018/01/03/</link>
+      <pubDate>Wed, 03 Jan 2018 16:09:12 -0800</pubDate>
+      
+      <guid>https://ieee-ucr.github.io/web-projects/blog/2018/01/03/</guid>
+      <description>This is a sticky post that ends 02/03/2018</description>
+    </item>
     
     <item>
       <title>2017-10-18</title>
