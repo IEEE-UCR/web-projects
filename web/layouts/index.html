@@ -1,6 +1,32 @@
 {{ define "main" }}
-  Home page
-  {{ range first 10 (where (where .Data.Pages "Type" "!=" "classifieds") ".Params.categories" "!=" nil) }}
-    {{ .Render "summary" }}
+  {{ $.Scratch.Set "stickyShown" false }}
+  {{ range (where .Data.Pages ".Params.sticky" true) }}
+  {{ $stickyEnd := time .Params.stickyEnd }}
+      {{ if $stickyEnd.After now }}
+        {{ if not ($.Scratch.Get "stickyShown") }}
+  <div class="posts-list">
+    <h1>Announcements <i class="material-icons">notifications_active</i></h1>
+    <div class="heading-line"></div>
+        {{ $.Scratch.Set "stickyShown" true }}
+        {{ end }}
+        {{ .Render "summary" }}
+      {{ end }}
   {{ end }}
+  {{ if eq ($.Scratch.Get "stickyShown") true }}
+  </div>
+  {{ end }}
+  <div class="posts-list">
+    <h1>Latest Posts <i class="material-icons">rss_feed</i></h1>
+    <div class="heading-line"></div>
+    {{ range first 10 (where .Data.Pages "Type" "in" (slice "blog" "projects" "classifieds")) }}
+      {{ if .Params.sticky }}
+        {{ $stickyEnd := time .Params.stickyEnd }}
+        {{ if $stickyEnd.Before now }}
+          {{ .Render "home-summary" }}
+        {{ end }}
+      {{ else }}
+        {{ .Render "home-summary" }}
+      {{ end }}
+    {{ end }}
+  </div>
 {{ end }}

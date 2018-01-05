@@ -1,4 +1,4 @@
-baseURL = "http://projects.ieeeucr.org/"
+baseURL = "https://ieee-ucr.github.io/web-projects/"
 languageCode = "en-us"
 title = "UCR Projects"
 enableGitInfo = true
@@ -11,5 +11,6 @@ enableGitInfo = true
     course = "courses"
 [params]
     description = "UCR Student Projects, hosted by IEEE-UCR."
-    primaryColor = "#F44336"
-    secondaryColor = "#2196F3"
+    primaryColor = "#2D6CC0"
+    secondaryColor = "#F1AB00"
+    studentHeaderImg = "images/header-bg-letters.jpg"

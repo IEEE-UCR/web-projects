@@ -6,6 +6,7 @@ students: []
 categories: ["student-project"]
 tags: []
 courses: ""
+gitUrl: ""
 draft: true
 ---
 

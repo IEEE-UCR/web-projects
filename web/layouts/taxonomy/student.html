@@ -1,16 +1,53 @@
 {{ define "main" }}
-This is a student page for {{ .Title }}.
-<ul>
-  <li>email: {{ .Params.email }}</li>
-  <li>major: {{ .Params.major }}</li>
-  <li>linkedin: {{ .Params.linkedin }}</li>
-  <li>website: {{ .Params.website }}</li>
-  <li>orgs: {{ range .Params.orgs }}{{ . }} {{ end }}</li>
-</ul>
-Projects:
-<ul>
+{{ $student := string .Data.Term }}
+{{ $path := (print "images/students/" $student ".png") }}
+<div class="student">
+  <div class="student-header" style="background-image: url('{{ .Site.Params.studentHeaderImg | relURL }}');">
+    <div class="student-header-top"></div>
+    {{- if (fileExists (print "static/" $path)) -}}
+    <div class="student-header-center"><img src="{{ print .Site.BaseURL $path }}" alt="{{ .Title }}"></div>
+    {{- end -}}
+    <div class="student-header-bottom">
+      <h1 class="student-name">{{ if .Param "title" }}{{ .Title }}{{ else }}{{ .Data.Term }}{{ end }}</h1>
+      <h2 class="student-major">{{ .Params.major }}</h2>
+    </div>
+  </div>
+  {{ if .Params }}
+  {{ $http := "^https?://" }}
+  <div class="student-info">
+    <ul>
+      {{ if .Param "email" }}
+      <li><i class="material-icons">email</i> {{ .Params.email }}</li>
+      {{ end }}
+      {{ if .Param "orgs" }}
+      <li><i class="material-icons">people</i> {{ delimit .Params.orgs ", " }}</li>
+      {{ end }}
+      {{ if .Param "website" }}
+      <li><i class="material-icons">public</i> <a href="{{ .Params.website }}">
+        {{- replaceRE $http "$1" .Params.website }}</a></li>
+      {{ end }}
+      {{ if .Param "linkedin" }}
+      <li><i class="fab fa-linkedin"></i> <a href="{{ .Params.linkedin }}">
+        {{- replaceRE $http "$1" .Params.linkedin }}</a></li>
+      {{ end }}
+      {{ if .Param "gitUrl" }}
+      <li><i class="fab fa-github"></i> <a href="{{ .Params.gitUrl }}">
+       {{- replaceRE $http "$1" .Params.gitUrl }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+  <div class="student-projects">
+    <h1>Projects</h1>
+    <div class="heading-line"></div>
     {{ range index .Site.Taxonomies.students .Data.Term  }}
-        <li><a href="{{ .Page.RelPermalink  }}">{{ .Page.Title  }}</a></li>
+      {{ .Render "summary" }}
     {{ end  }}
-</ul>
+    <!-- <ul> -->
+    <!--     {{ range index .Site.Taxonomies.students .Data.Term  }} -->
+    <!--         <li><a class="listing" href="{{ .Page.RelPermalink  }}">{{ .Page.Title  }}</a></li> -->
+    <!--     {{ end  }} -->
+    <!-- </ul> -->
+  </div>
+</div>
 {{ end }}

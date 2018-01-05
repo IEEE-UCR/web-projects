@@ -5,6 +5,7 @@ students: ["jgome043"]
 categories: ["student-project", "course-project"]
 tags: ["raspberry pi", "opencv"]
 courses: "cs122a"
+gitUrl: "https://github.com/jgome043/growbot"
 draft: true
 ---
 # Level 1 heading

@@ -1,38 +1,12 @@
 {{ define "main" }}
-  list layout
-<h1>{{ if eq .Type "blog" }}Blog{{ else }}{{ .Title }}{{ end }}</h1>
-  {{ range .Pages }}
-<a class="listing" href="{{ .Permalink }}">
-  <article class="summary">
-    <header>
-      <h2>
-      {{- if eq .Type "blog" -}}
-        {{ .Date.Format "Mon, Jan 2, 2006" }}
-      {{- else -}}
-        {{ .Title }}
-      {{- end -}}
-      </h2>
-      {{ if (.Param "students") }}
-      <div class="post-contributors">
-        By: 
-        <ul class="ul-contributors">
-        {{ range $student := (.Param "students") }}
-        {{ range (where $.Site.Pages "Data.Term" $student) }}
-          <li>
-          {{- if .Params.title -}}
-            {{- .Title -}}
-          {{- else -}}
-            {{- $student -}}
-          {{- end -}}
-          </li>
-        {{ end }}
-        {{ end }}
-        </ul>
-      </div>
-      {{ end }}
-    </header>
-    <p>{{ .Summary }}</p>
-  </article>
-</a>
+<div>
+  <h1>{{- if eq .Type "blog" }}Blog
+    {{- else if eq .Type "courses" }}{{ upper .Title }} Projects
+    {{- else if eq .Type "tags" }}"{{ lower .Title }}" Projects
+    {{- else }}{{ .Title }}{{ end }}</h1>
+  <div class="heading-line"></div>
+</div>
+{{ range .Pages }}
+{{ .Render "summary" }}
 {{ end }}
 {{ end }}

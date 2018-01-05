@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="{{ if .IsHome }}{{ $.Site.Params.Description }}{{ else }}{{ .Description }}{{end}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Site.Title }} | {{ .Title }}</title>
+    <meta http-equiv=”last-modified” content=”{{ now | dateFormat "2006-01-02" }}”>
+    <title>{{ .Site.Title }}{{ if not .IsHome }} | {{ .Title }}{{ end }}</title>
 
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
@@ -35,8 +36,10 @@
     <meta name="theme-color" content="{{ .Site.Params.PrimaryColor }}">
 
     <!-- Material Design icons -->
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <!-- Font Awesome icons -->
+    <!-- <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet"> -->
 
     <!-- Material Design Lite page styles -->
     <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-blue.min.css"> -->
@@ -44,22 +47,25 @@
     <!-- Custom styles -->
     <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/main.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
   {{ .Hugo.Generator }}
 </head>
 <body>
   <header>
+    <i class="material-icons" id="hamburger-icon">menu</i>
     <a href="{{ .Site.BaseURL }}">
       <div class="title">{{ .Site.Title }}</div>
     </a>
     <div class="nav">
       <ul>
-        <a href="/blog"><li>blog</li></a>
-        <a href="/solo-projects"><li>independent</li></a>
-        <a href="/club-projects"><li>club</li></a>
-        <a href="/students"><li>by student</li></a>
-        <a href="/courses"><li>by class</li></a>
-        <a href="/classifieds"><li>classifieds</li></a>
-        <a href="/submissions"><li>submit your project</li></a>
+        <a href="{{ .Site.BaseURL }}blog"><li>blog</li></a>
+        <a href="{{ .Site.BaseURL }}solo-projects"><li>independent</li></a>
+        <a href="{{ .Site.BaseURL }}club-projects"><li>club</li></a>
+        <a href="{{ .Site.BaseURL }}students"><li>by student</li></a>
+        <a href="{{ .Site.BaseURL }}courses"><li>by class</li></a>
+        <a href="{{ .Site.BaseURL }}classifieds"><li>classifieds</li></a>
+        <a href="{{ .Site.BaseURL }}submissions"><li>submit your project</li></a>
+        <a href="{{ .Site.BaseURL }}sponsorship"><li>sponsorship</li></a>
       </ul>
     </div>
   </header>
@@ -72,9 +78,10 @@
     <div class="nav">
       <ul>
         <a href="#"><li>contact us</li></a>
-        <a href="/about"><li>about us</li></a>
+        <a href="{{ .Site.BaseURL }}about"><li>about us</li></a>
       </ul>
     </div>
+    <div class="last-update">Last generated on {{ now | dateFormat "2006-01-02" }}.</div>
   </footer>
 </body>
 </html>

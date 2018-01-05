@@ -1,38 +1,13 @@
 {{ define "main" }}
-  cat layout
-<h1>{{ .Title }}</h1>
+<div>
+  <h1>{{ .Title }}</h1>
+  <div class="heading-line"></div>
+</div>
 {{ $pagecat := .Params.pagecat  }}
 {{ range $key, $taxonomy := .Site.Taxonomies.categories  }}
   {{ if eq $key $pagecat  }}
     {{ range $taxonomy.Pages  }}
-<a class="listing" href="{{ .Permalink }}">
-  <article class="summary">
-    <header>
-      <h2>
-      {{ .Title }}
-      </h2>
-      {{ if (.Param "students") }}
-      <div class="post-contributors">
-        By: 
-        <ul class="ul-contributors">
-        {{ range $student := (.Param "students") }}
-        {{ range (where $.Site.Pages "Data.Term" $student) }}
-          <li>
-          {{- if .Params.title -}}
-            {{- .Title -}}
-          {{- else -}}
-            {{- $student -}}
-          {{- end -}}
-          </li>
-        {{ end }}
-        {{ end }}
-        </ul>
-      </div>
-      {{ end }}
-    </header>
-    <p>{{ .Summary }}</p>
-  </article>
-</a>
+    {{ .Render "summary" }}
     {{ end  }}
   {{ end  }}
 {{ end  }}

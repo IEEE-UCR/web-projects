@@ -5,6 +5,7 @@ students: ["jgome043", "dphan014", "tlove004", "mlauh001"]
 categories: ["student-project", "course-project"]
 tags: ["mobile", "ios", "android", "entrepreneurship", "cs190"]
 courses: "cs190"
+gitUrl: ""
 draft: true
 ---
 Lorem ipsum dolor amet wolf man bun stumptown, YOLO fanny pack ethical everyday

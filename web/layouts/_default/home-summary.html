@@ -3,9 +3,9 @@
     <header>
       <h2>
       {{- if eq .Type "blog" -}}
-        {{ .Date.Format "Mon, Jan 2, 2006" }}
+        {{ humanize .Type }} - {{ .Date.Format "Mon, Jan 2, 2006" }}
       {{- else -}}
-        {{ .Title }}
+        {{ humanize .Type | singularize }} - {{ .Title }}
       {{- end -}}
       </h2>
       {{ if (.Param "students") }}

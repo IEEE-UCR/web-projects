@@ -4,11 +4,14 @@
     --theme-font: 'Source Sans Pro', sans-serif;
     --theme-font-color: rgba(0,0,0,0.7);
     --theme-black: rgba(0,0,0,0.9);
-    --theme-white: rgba(255,255,255,0.8);
+    --theme-white: rgba(255,255,255,0.9);
     --theme-blue: #2D6CC0;
     --theme-gold: #F1AB00; 
     --theme-gray: #7A6E67;
     --monospace-font: 'Source Code Pro', monospace;
+    --student-image: 100px;
+    --student-header-height: 300px;
+    --student-header-top-height: calc(var(--student-header-height)*.7);
 }
 
 body,html {
@@ -28,12 +31,39 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
 
+h1 {
+    font-size: 1.8em;
+}
+
+main > div {
+    position: relative;
+}
+.heading-line {
+    position: absolute;
+    top: 1.2em;
+    width: 100%;
+    height: 20px;
+    border-bottom: 2px solid #ccc;
+    border-right: 3px solid #ccc;
+    transform: skew(-45deg);
+}
+
+i.material-icons {
+    position: relative;
+    top: 3px;
+    font-size: 1em;
+}
+
 a {
     transition: all 0.2s ease;
 }
 
 a:link, a:visited, a:hover, a:active {
     color: var(--theme-font-color);
+}
+
+#hamburger-icon {
+    font-size: 1.5em;
 }
 
 body > header, body > footer {
@@ -59,6 +89,10 @@ body > header a .title {
     font-size: 1.4em;
 }
 
+main > div.posts-list:not(:first-child) {
+    margin-top: 80px;
+}
+
 .nav ul, .ul-contributors {
     list-style-type: none;
     margin: 0;
@@ -67,7 +101,7 @@ body > header a .title {
 
 .nav li {
     display: inline;
-    font-weight: 600;
+    /* font-weight: 600; */
     font-size: 1.0em;
     padding: 0 8px;
     transition: all 0.5s ease;
@@ -75,8 +109,11 @@ body > header a .title {
 }
 
 .nav li:hover {
-    border-bottom: 2px solid var(--theme-black);
-    color: var(--theme-black);
+    /* text-shadow: 0 0 1px rgba(0,0,0,0.5); */
+    text-shadow: 0 0 1px rgba(45,108,192,0.5);
+    /* text-shadow: 0 0 1px var(--theme-blue); */
+    border-bottom: 2px solid var(--theme-gold);
+    color: var(--theme-blue);
 }
 
 .ul-contributors li {
@@ -101,6 +138,7 @@ main p {
 }
 
 .post-content {
+    margin-top: 40px;
     font-size: 12px;
 }
 
@@ -120,11 +158,17 @@ main p {
 body > footer {
     height: 50px;
     justify-content: center;
+    align-items: baseline;
     font-size: 1em;
 }
 
 body > footer div {
     margin: 0 10px;
+}
+
+.last-update {
+    font-style: italic;
+    font-size: 0.6em;
 }
 
 article.summary {
@@ -140,6 +184,10 @@ article.summary {
 .summary h2 {
     margin: 0;
     font-weight: 600;
+}
+
+.summary > p {
+    margin: 8px 0;
 }
 
 a.listing {
@@ -173,3 +221,93 @@ a.tag {
     color: var(--theme-white);
 }
 
+.student {
+    display: flex;
+    flex-direction: column;
+}
+
+.student-header {
+    position: relative;
+    width: 100%;
+    height: var(--student-header-height);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.student-header-top {
+    width: 100%;
+    height: var(--student-header-top-height);
+    background-color: rgba(45,108,192,0.5);
+}
+
+.student-header-center {
+    position: absolute;
+    height: var(--student-image);
+    width: var(--student-image);
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid #fff;
+    z-index: 999;
+    background-color: #ccc;
+    overflow: hidden;
+}
+
+.student-header-center img {
+    position: absolute;
+    width: 120%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.student-header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    height: calc(var(--student-header-height) - var(--student-header-top-height));
+    background-color: rgba(241,171,0,0.5);
+    color: var(--theme-white);
+}
+
+.student-header h1, .student-header h2 {
+    margin: 10px 20px;
+}
+
+.student-header h1 {
+    font-weight: 600;
+}
+
+.student-info {
+    padding: 20px;
+    background-color: white;
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+.student-info ul {
+    list-style-type: none;
+}
+
+.student-projects {
+    position: relative;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+.student-projects h1 {
+    padding-left: 10px;
+    font-size: 1.2em;
+}
+
+.student-projects .heading-line {
+    left: 1em;
+    width: 96%;
+}
+
+.student-projects a {
+    padding-left: 20px;
+}

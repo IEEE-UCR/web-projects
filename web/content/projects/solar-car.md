@@ -4,6 +4,7 @@ date: 2017-10-18T01:18:24-07:00
 students: ["studenta", "studentb", "studentc"]
 categories: ["org-project"]
 tags: ["ieee"]
+gitUrl: ""
 draft: true
 ---
 Lorem ipsum dolor amet banjo fingerstache copper mug wolf palo santo.

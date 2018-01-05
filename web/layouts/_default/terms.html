@@ -1,9 +1,9 @@
 {{ define "main" }}
-terms layout
-{{ printf "%#v" .Type }}
 {{ $baseurl := .Site.BaseURL }}
-<h1>{{ if eq .Type "courses" }}Projects by Course{{ else }}{{ .Title }}{{ end }}</h1>
-
+<div>
+  <h1>{{ if eq .Type "courses" }}Projects by Course{{ else }}{{ .Title }}{{ end }}</h1>
+  <div class="heading-line"></div>
+</div>
 {{ $plural := .Data.Plural }}
 {{ range $key, $value := .Data.Terms }}
 <a class="listing" href="{{ $baseurl }}{{ $plural }}/{{ $key }}">

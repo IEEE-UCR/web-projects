@@ -7,5 +7,6 @@ gender: ""
 orgs: []
 linkedin: ""
 website: ""
+gitUrl: ""
 ---
 

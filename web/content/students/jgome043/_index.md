@@ -7,5 +7,6 @@ gender: "M"
 orgs: ["IEEE", "ACM"]
 linkedin: "https://linkedin.com/in/joelgomez3"
 website: "https://joelgomez.me"
+gitUrl: "https://github.com/jgome043"
 ---
 

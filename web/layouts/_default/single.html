@@ -1,33 +1,53 @@
 {{ define "main" }}
-  Single page layout
-  <h1>
-    {{- if eq .Type "blog" -}}
-      {{ .Date.Format "Mon, Jan 2, 2006" }}
-    {{- else -}}
-      {{ .Title }}
-    {{- end -}}
-  </h1>
+  <div>
+    <h1>
+      {{- if eq .Type "blog" -}}
+        {{ .Date.Format "Mon, Jan 2, 2006" }}
+      {{- else -}}
+        {{ .Title }}
+      {{- end -}}
+    </h1>
+    <div class="heading-line"></div>
+  </div>
   {{ if (.Param "students") }}
-    <div>By:</div>
-    <ul class="ul-contributors">
-      {{ range $student := (.Param "students") }}
-      {{ range (where $.Site.Pages "Data.Term" $student) }}
-      <li><a href="{{ .URL }}">
-          {{- if .Params.title -}}
-            {{- .Title -}}
-          {{- else -}}
-            {{- $student -}}
-          {{- end -}}
-      </a></li>
-      {{ end }}
-      {{ end }}
-    </ul>
+  <div>By:</div>
+  <ul class="ul-contributors">
+    {{ range $student := (.Param "students") }}
+    {{ range (where $.Site.Pages "Data.Term" $student) }}
+    <li><a href="{{ .URL }}">
+        {{- if .Params.title -}}
+          {{- .Title -}}
+        {{- else -}}
+          {{- $student -}}
+        {{- end -}}
+    </a></li>
+    {{ end }}
+    {{ end }}
+  </ul>
   {{ end }}
   {{ if (.Param "tags") }}
   <div class="tags">
-      Tags:
+    Tags <i class="material-icons">label</i>:
     <div>
       {{ range .Param "tags" }}
+      <a class="tag" href="{{ $.Site.BaseURL }}tags/{{ urlize . }}">
+          {{- . -}}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+  {{ if (.Param "gitUrl") }}
+  <div class="source-code"><i class="fab fa-github"></i> <a href="{{ .Param "gitUrl" }}">
+   {{- replaceRE "^https?://" "$1" .Params.gitUrl -}}</a>
+  </div>
+  {{ end }}
+  {{ if (.Param "bounties") }}
+  <div>Contact: {{ .Param "contact" }}</div>
+  <div class="bounties">
+    Skills <i class="material-icons">build</i>:
+    <div>
+      {{ range .Param "bounties" }}
       <a class="tag" href="{{ $.Site.BaseURL }}tags/{{ urlize . }}">
           {{- . -}}
       </a>
