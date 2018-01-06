@@ -62,21 +62,87 @@ a:link, a:visited, a:hover, a:active {
     color: var(--theme-font-color);
 }
 
-#hamburger-icon {
-    font-size: 1.5em;
+#nav-drawer {
+    position: fixed;
+    background: #fff;
+    z-index: 999;
+    width: 75%;
+    height: 100%;
+    left: -75%;
+    transition: all 0.2s ease;
 }
 
+#nav-drawer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#nav-drawer li {
+    padding-left: 20px;
+}
+
+#nav-drawer ul:first-child a:first-child {
+    font-weight: 600;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+#nav-drawer ul:first-child a:last-child {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1em;
+}
+
+#nav-drawer ul:first-child {
+    margin-bottom: 0;
+}
+
+#nav-drawer ul:last-child {
+    margin-top: 0;
+}
+
+#nav-drawer a.listing {
+    border: none;
+}
+
+#nav-drawer + #nav-overlay {
+    display: none;
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#nav-drawer.expanded {
+    transform: translateX(100%);
+    box-shadow: 3px 0 16px -3px rgba(0, 0, 0, 0.4);
+    overflow: auto;
+}
+
+#nav-drawer.expanded + #nav-overlay {
+    display: block;
+}
+
+#hamburger-icon {
+    font-size: 1.8em;
+    padding-right: 14px;
+    top: 0;
+}
+
+/* mobilzed, desktop view added to media */
 body > header, body > footer {
     margin: 0;
     padding: 0 32px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
+/* mobilzed, desktop view added to media */
 body > header {
-    height: 50px;
+    height: 60px;
     background-color: var(--header-bg);
+    align-items: center;
 }
 
 body > header a,body > footer a {
@@ -91,6 +157,11 @@ body > header a .title {
 
 main > div.posts-list:not(:first-child) {
     margin-top: 80px;
+}
+
+/* mobilzed, desktop view added to media */
+header > .nav, footer > .nav {
+    display: none;
 }
 
 .nav ul, .ul-contributors {
@@ -157,8 +228,8 @@ main p {
 
 body > footer {
     height: 50px;
-    justify-content: center;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: center;
     font-size: 1em;
 }
 
@@ -273,6 +344,14 @@ a.tag {
     color: var(--theme-white);
 }
 
+.student-header-bottom {
+    font-size: 12px;
+}
+
+.student-major {
+    text-align: right;
+}
+
 .student-header h1, .student-header h2 {
     margin: 10px 20px;
 }
@@ -284,7 +363,6 @@ a.tag {
 .student-info {
     padding: 20px;
     background-color: white;
-    font-size: 1.2em;
     line-height: 1.6em;
 }
 
@@ -310,4 +388,40 @@ a.tag {
 
 .student-projects a {
     padding-left: 20px;
+}
+
+@media screen and (min-width: 376px) and (min-height: 737px) {
+    #hamburger-icon, #nav-drawer {
+        display: none;
+    }
+
+    body > header, body > footer {
+        margin: 0;
+        padding: 0 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    body > header {
+        height: 50px;
+    }
+
+    body > footer {
+        flex-direction: row;
+        justify-content: center;
+        align-items: baseline;
+    }
+
+    header > .nav, footer > .nav {
+        display: block;
+    }
+
+    .student-header-bottom {
+        font-size: 16px;
+    }
+
+    .student-info {
+        font-size: 1.2em;
+    }
 }

@@ -1,4 +1,5 @@
-baseURL = "https://ieee-ucr.github.io/web-projects/"
+#baseURL = "https://ieee-ucr.github.io/web-projects/"
+baseURL = "/"
 languageCode = "en-us"
 title = "UCR Projects"
 enableGitInfo = true

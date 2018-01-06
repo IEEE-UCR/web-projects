@@ -51,6 +51,24 @@
   {{ .Hugo.Generator }}
 </head>
 <body>
+  <div id="nav-drawer">
+    <ul>
+      <a class="listing" href="{{ .Site.BaseURL }}"><li><i class="material-icons">home</i> {{ .Site.Title }}</li></a>
+      <a class="listing" href="{{ .Site.BaseURL }}blog"><li>blog</li></a>
+      <a class="listing" href="{{ .Site.BaseURL }}solo-projects"><li>independent</li></a>
+      <a class="listing" href="{{ .Site.BaseURL }}club-projects"><li>club</li></a>
+      <a class="listing" href="{{ .Site.BaseURL }}students"><li>by student</li></a>
+      <a class="listing" href="{{ .Site.BaseURL }}courses"><li>by class</li></a>
+      <a class="listing" href="{{ .Site.BaseURL }}classifieds"><li>classifieds</li></a>
+      <a class="listing" href="{{ .Site.BaseURL }}submissions"><li>submit your project</li></a>
+      <a class="listing" href="{{ .Site.BaseURL }}sponsorship"><li>sponsorship</li></a>
+    </ul>
+    <ul>
+      <a class="listing "href="#"><li>contact us</li></a>
+      <a class="listing "href="{{ .Site.BaseURL }}about"><li>about us</li></a>
+    </ul>
+  </div>
+  <div id="nav-overlay"></div>
   <header>
     <i class="material-icons" id="hamburger-icon">menu</i>
     <a href="{{ .Site.BaseURL }}">
@@ -84,5 +102,29 @@
     <div class="last-update">Last generated on {{ now | dateFormat "2006-01-02" }}.</div>
   </footer>
 </body>
+<script>
+var burger = document.getElementById('hamburger-icon');
+var navDrawer = document.getElementById('nav-drawer');
+var navOverlay = document.getElementById('nav-overlay');
+var html = document.getElementsByTagName('html')[0];
+var body = document.getElementsByTagName('body')[0];
+
+function toggleDrawer(e) {
+  if (navDrawer.classList.contains('expanded')) {
+    navDrawer.classList.remove('expanded');
+    html.removeAttribute('style');
+    body.removeAttribute('style');
+  } else {
+    navDrawer.classList.add('expanded');
+    html.style.overflow = 'hidden';
+    body.style.overflow = 'hidden';
+    body.style.position = 'fixed';
+  }
+}
+
+burger.onclick = toggleDrawer;
+navDrawer.onclick = toggleDrawer;
+navOverlay.onclick = toggleDrawer;
+</script>
 </html>
 
