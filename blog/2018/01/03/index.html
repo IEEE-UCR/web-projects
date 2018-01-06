@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv=”last-modified” content=”2018-01-04”>
+    <meta http-equiv=”last-modified” content=”2018-01-05”>
     <title>UCR Projects | 2018-01-03</title>
 
     
@@ -45,13 +45,32 @@
     
 
     
-    <link rel="stylesheet" href="https://ieee-ucr.github.io/web-projects/styles/main.css">
+    <link rel="stylesheet" href="https://ieee-ucr.github.io/web-projects/styles/main.css?v=1">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
   <meta name="generator" content="Hugo 0.32.2" />
 </head>
 <body>
+  <div id="nav-drawer">
+    <ul>
+      <a class="listing" href="https://ieee-ucr.github.io/web-projects/"><li><i class="material-icons">home</i> UCR Projects</li></a>
+      <a class="listing" href="https://ieee-ucr.github.io/web-projects/blog"><li>blog</li></a>
+      <a class="listing" href="https://ieee-ucr.github.io/web-projects/solo-projects"><li>independent</li></a>
+      <a class="listing" href="https://ieee-ucr.github.io/web-projects/club-projects"><li>club</li></a>
+      <a class="listing" href="https://ieee-ucr.github.io/web-projects/students"><li>by student</li></a>
+      <a class="listing" href="https://ieee-ucr.github.io/web-projects/courses"><li>by class</li></a>
+      <a class="listing" href="https://ieee-ucr.github.io/web-projects/classifieds"><li>classifieds</li></a>
+      <a class="listing" href="https://ieee-ucr.github.io/web-projects/submissions"><li>submit your project</li></a>
+      <a class="listing" href="https://ieee-ucr.github.io/web-projects/sponsorship"><li>sponsorship</li></a>
+    </ul>
+    <ul>
+      <a class="listing "href="#"><li>contact us</li></a>
+      <a class="listing "href="https://ieee-ucr.github.io/web-projects/about"><li>about us</li></a>
+    </ul>
+  </div>
+  <div id="nav-overlay"></div>
   <header>
+    <i class="material-icons" id="hamburger-icon">menu</i>
     <a href="https://ieee-ucr.github.io/web-projects/">
       <div class="title">UCR Projects</div>
     </a>
@@ -90,8 +109,32 @@
         <a href="https://ieee-ucr.github.io/web-projects/about"><li>about us</li></a>
       </ul>
     </div>
-    <div class="last-update">Last updated on 2018-01-04.</div>
+    <div class="last-update">Last generated on 2018-01-05.</div>
   </footer>
 </body>
+<script>
+var burger = document.getElementById('hamburger-icon');
+var navDrawer = document.getElementById('nav-drawer');
+var navOverlay = document.getElementById('nav-overlay');
+var html = document.getElementsByTagName('html')[0];
+var body = document.getElementsByTagName('body')[0];
+
+function toggleDrawer(e) {
+  if (navDrawer.classList.contains('expanded')) {
+    navDrawer.classList.remove('expanded');
+    html.removeAttribute('style');
+    body.removeAttribute('style');
+  } else {
+    navDrawer.classList.add('expanded');
+    html.style.overflow = 'hidden';
+    body.style.overflow = 'hidden';
+    body.style.position = 'fixed';
+  }
+}
+
+burger.onclick = toggleDrawer;
+navDrawer.onclick = toggleDrawer;
+navOverlay.onclick = toggleDrawer;
+</script>
 </html>
 
