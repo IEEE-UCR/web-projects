@@ -15,3 +15,4 @@ enableGitInfo = true
     primaryColor = "#2D6CC0"
     secondaryColor = "#F1AB00"
     studentHeaderImg = "images/header-bg-letters.jpg"
+ignoreFiles = [ "README.md" ]
