@@ -390,7 +390,7 @@ a.tag {
     padding-left: 20px;
 }
 
-@media screen and (min-width: 376px) and (min-height: 737px) {
+@media screen and (min-width: 376px) {
     #hamburger-icon, #nav-drawer {
         display: none;
     }
